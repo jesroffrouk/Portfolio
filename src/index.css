@@ -137,6 +137,7 @@
   --color-home-bg: #000000;
   --color-home-text: #fff;
   --font-home: "Share Tech Mono", monospace;
+  --color-outline1: #E6FFFD;
 }
 
 @layer base {
@@ -146,4 +147,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+ 
+.headings {
+  @apply text-lg sm:text-3xl text-center font-bold
 }

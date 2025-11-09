@@ -1,5 +1,5 @@
 import React from "react";
-import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react";
+import { CalendarIcon, HomeIcon, MailIcon,  FolderKanban } from "lucide-react";
 
 // adjust these imports to relative paths if you're not using shadcn/ui
 import { buttonVariants } from "../ui/button";
@@ -63,7 +63,7 @@ const Icons = {
 const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "#", icon: PencilIcon, label: "Blog" },
+    { href: "/projects", icon: FolderKanban, label: "Projects" },
   ],
   contact: {
     social: {
@@ -78,9 +78,11 @@ const DATA = {
 // ---- COMPONENT ----
 export function DockDemo() {
   return (
-    
-    <div className='pointer-events-none fixed inset-x-0 bottom-0 z-30 mx-auto mb-8 flex origin-bottom h-full max-h-14'>
-    <div className="w-max p-2 z-50 pointer-events-auto relative mx-auto flex min-h-full h-full items-center px-1">
+    <div className='pointer-events-none fixed inset-x-0 bottom-0 z-30 mx-auto mb-8 flex origin-bottom h-full max-h-14' 
+
+    >
+    <div className="w-max p-2 z-50 pointer-events-auto relative mx-auto flex min-h-full h-full items-center px-1"
+    >
       <TooltipProvider>
         <Dock direction="middle">
           {DATA.navbar.map((item) => (
@@ -91,11 +93,11 @@ export function DockDemo() {
                     href={item.href}
                     aria-label={item.label}
                     className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      buttonVariants({ variant: "link", size: "icon" }),
                       "size-12 rounded-full"
                     )}
                   >
-                    <item.icon className="size-4" />
+                    <item.icon className="size-4 text-outline1" />
                   </a>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -113,11 +115,11 @@ export function DockDemo() {
                     href={social.url}
                     aria-label={social.name}
                     className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      buttonVariants({ variant: "link", size: "icon" }),
                       "size-12 rounded-full"
                     )}
                   >
-                    <social.icon className="size-4" />
+                    <social.icon className="size-4 text-outline1" />
                   </a>
                 </TooltipTrigger>
                 <TooltipContent>

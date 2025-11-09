@@ -1,66 +1,29 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Code, Palette, Database, Server, Smartphone, Globe, Cpu, GitBranch } from 'lucide-react';
-
-
-// a dropdown button to show all skills in box. open box
+import React, { useState, useRef , useEffect } from 'react';
+import { Code, Palette, Database, Server, Smartphone, Globe, Cpu, GitBranch , Container , Layers , Atom , Cylinder , Terminal , Box , Workflow } from 'lucide-react';
+import Allskills from './AllSkills';
 
 const SkillsOmnitrix = () => {
   const skills = [
-    {
-      name: 'HTML',
-      icon: Code,
-      color: '#E34F26',
-      description: 'Semantic markup and accessibility',
-      proficiency: 95,
-      experience: '5+ years'
-    },
-    {
-      name: 'CSS',
-      icon: Palette,
-      color: '#1572B6',
-      description: 'Advanced styling and animations',
-      proficiency: 90,
-      experience: '5+ years'
-    },
     {
       name: 'JavaScript',
       icon: Cpu,
       color: '#F7DF1E',
       description: 'Modern ES6+ and async programming',
-      proficiency: 92,
-      experience: '4+ years'
+      proficiency: 80,
     },
     {
       name: 'React',
       icon: Globe,
       color: '#61DAFB',
       description: 'Component-based architecture',
-      proficiency: 88,
-      experience: '3+ years'
-    },
+      proficiency: 80,
+    },  
     {
       name: 'Node.js',
       icon: Server,
       color: '#339933',
       description: 'Backend development and APIs',
-      proficiency: 85,
-      experience: '3+ years'
-    },
-    {
-      name: 'Database',
-      icon: Database,
-      color: '#4479A1',
-      description: 'SQL and NoSQL databases',
       proficiency: 80,
-      experience: '3+ years'
-    },
-    {
-      name: 'Mobile',
-      icon: Smartphone,
-      color: '#A4C639',
-      description: 'Responsive and mobile-first design',
-      proficiency: 87,
-      experience: '4+ years'
     },
     {
       name: 'Git',
@@ -68,12 +31,63 @@ const SkillsOmnitrix = () => {
       color: '#F05032',
       description: 'Version control and collaboration',
       proficiency: 90,
-      experience: '5+ years'
-    }
+    },
+      {
+    name: 'Next.js',
+    icon: Layers,
+    color: '#FBFBFB',
+    description: 'Full-stack React framework with SSR',
+    proficiency: 80,
+  },
+  {
+    name: 'Express',
+    icon: Server,
+    color: '#F4F754',
+    description: 'Fast Node.js web framework',
+    proficiency: 85,
+  },
+  {
+    name: 'MongoDB',
+    icon: Database,
+    color: '#47A248',
+    description: 'NoSQL database for scalable apps',
+    proficiency: 85,
+  },
+  {
+    name: 'PostgreSQL',
+    icon: Cylinder,
+    color: '#4169E1',
+    description: 'Relational database management',
+    proficiency: 65,
+  },
+  {
+    name: 'Bash',
+    icon: Terminal,
+    color: '#4EAA25',
+    description: 'Shell scripting and automation',
+    proficiency: 65,
+  },
+  {
+    name: 'Prisma',
+    icon: Box,
+    color: '#4E61D3',
+    description: 'Next-gen TypeScript ORM',
+    proficiency: 70,
+  },
+  {
+    name: 'Redux',
+    icon: Workflow,
+    color: '#764ABC',
+    description: 'State management for React apps',
+    proficiency: 70,
+  },
   ];
+
 
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [offset, setOffset] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [startOffset, setStartOffset] = useState(0);
@@ -83,7 +97,58 @@ const SkillsOmnitrix = () => {
   const SelectedIcon = selectedSkill.icon;
   const itemWidth = 140;
 
+  // Detect if touch device
+  useEffect(() => {
+    const checkTouch = () => {
+      setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+    };
+    checkTouch();
+    window.addEventListener('resize', checkTouch);
+    return () => window.removeEventListener('resize', checkTouch);
+  }, []);
+
+  // Hover scrolling for desktop
+  const handleMouseMove = (e) => {
+    if (isTouchDevice || isDragging) return;
+    if (!containerRef.current) return;
+    
+    const rect = containerRef.current.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const containerWidth = rect.width;
+    
+    const ratio = mouseX / containerWidth;
+    const maxOffset = 0;
+    const minOffset = -(skills.length - 1) * itemWidth;
+    const newOffset = maxOffset + (minOffset - maxOffset) * ratio;
+    
+    setOffset(newOffset);
+    
+    const centerOffset = -newOffset / itemWidth;
+    const newIndex = Math.round(centerOffset);
+    const clampedIndex = Math.max(0, Math.min(skills.length - 1, newIndex));
+    setSelectedIndex(clampedIndex);
+  };
+
+  const handleMouseEnter = () => {
+    if (!isTouchDevice) {
+      setIsHovering(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isTouchDevice) {
+      setIsHovering(false);
+      const centerOffset = -offset / itemWidth;
+      const snappedIndex = Math.round(centerOffset);
+      const clampedIndex = Math.max(0, Math.min(skills.length - 1, snappedIndex));
+      setOffset(-clampedIndex * itemWidth);
+      setSelectedIndex(clampedIndex);
+    }
+  };
+
+  // Touch/drag scrolling for mobile
   const handleStart = (e) => {
+    if (!isTouchDevice) return;
     setIsDragging(true);
     const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
     setStartX(clientX);
@@ -91,13 +156,12 @@ const SkillsOmnitrix = () => {
   };
 
   const handleMove = (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
+    if (!isDragging || !isTouchDevice) return;
+    
     const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
     const diff = clientX - startX;
     let newOffset = startOffset + diff;
     
-    // Clamp offset to prevent scrolling beyond boundaries
     const maxOffset = 0;
     const minOffset = -(skills.length - 1) * itemWidth;
     newOffset = Math.max(minOffset, Math.min(maxOffset, newOffset));
@@ -111,6 +175,7 @@ const SkillsOmnitrix = () => {
   };
 
   const handleEnd = () => {
+    if (!isTouchDevice) return;
     setIsDragging(false);
     const centerOffset = -offset / itemWidth;
     const snappedIndex = Math.round(centerOffset);
@@ -119,11 +184,17 @@ const SkillsOmnitrix = () => {
     setSelectedIndex(clampedIndex);
   };
 
+  // Click to select skill
+  const handleSkillClick = (index) => {
+    setSelectedIndex(index);
+    setOffset(-index * itemWidth);
+  };
+
   useEffect(() => {
-    if (isDragging) {
+    if (isDragging && isTouchDevice) {
       window.addEventListener('mousemove', handleMove);
       window.addEventListener('mouseup', handleEnd);
-      window.addEventListener('touchmove', handleMove, { passive: false });
+      window.addEventListener('touchmove', handleMove);
       window.addEventListener('touchend', handleEnd);
       
       return () => {
@@ -133,33 +204,41 @@ const SkillsOmnitrix = () => {
         window.removeEventListener('touchend', handleEnd);
       };
     }
-  }, [isDragging, startX, offset]);
+  }, [isDragging, startX, offset, isTouchDevice]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-8">
+    <div className="min-h-screen flex items-center justify-center px-8">
       <div className="max-w-4xl w-full">
-        <h1 className="text-3xl font-bold text-center mb-4 bg-clip-text">
-          Skills Sets 
-        </h1>
-        <p className="text-gray-400 text-center mb-12">Click and drag to scroll • Explore your skills</p>
+        <div className='py-5'>
+          <h1 className="headings mb-4">
+            Skills Sets 
+          </h1>
+          <p className="text-gray-400 text-center flex flex-row justify-center items-center">
+            {isTouchDevice ? 'Swipe or tap to explore • ' : 'Move your cursor to scroll • '}
+            <Allskills />
+          </p>
+        </div>
         
-        <div className="flex flex-col items-center justify-center gap-8">
+        <div className="flex flex-col items-center justify-center mt-4 gap-8">
           {/* Linear carousel */}
           <div className="relative w-full max-w-3xl overflow-hidden">
-            {/* Fade gradients on edges - only show when not at boundaries */}
+            {/* Fade gradients on edges */}
             <div 
-              className="absolute left-0 top-0 bottom-0 w-32 to-transparent z-10 pointer-events-none transition-opacity duration-300"
+              className="absolute left-0 top-0 bottom-0 w-32  z-10 pointer-events-none transition-opacity duration-300"
               style={{ opacity: selectedIndex > 0 ? 1 : 0 }}
             ></div>
             <div 
-              className="absolute right-0 top-0 bottom-0 w-32 to-transparent z-10 pointer-events-none transition-opacity duration-300"
+              className="absolute right-0 top-0 bottom-0 w-32  z-10 pointer-events-none transition-opacity duration-300"
               style={{ opacity: selectedIndex < skills.length - 1 ? 1 : 0 }}
             ></div>
             
             {/* Scrollable container */}
             <div 
               ref={containerRef}
-              className="cursor-grab active:cursor-grabbing select-none py-8"
+              className={`select-none py-8 ${isTouchDevice ? 'cursor-grab active:cursor-grabbing' : 'cursor-default'}`}
+              onMouseMove={handleMouseMove}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
               onMouseDown={handleStart}
               onTouchStart={handleStart}
             >
@@ -167,7 +246,7 @@ const SkillsOmnitrix = () => {
                 className="flex items-center justify-start transition-transform"
                 style={{ 
                   transform: `translateX(calc(50% - ${itemWidth / 2}px + ${offset}px))`,
-                  transitionDuration: isDragging ? '0ms' : '300ms'
+                  transitionDuration: (isHovering && !isTouchDevice) || isDragging ? '0ms' : '300ms'
                 }}
               >
                 {skills.map((skill, index) => {
@@ -181,19 +260,21 @@ const SkillsOmnitrix = () => {
                   return (
                     <div
                       key={skill.name}
-                      className="flex-shrink-0 transition-all duration-300 pointer-events-none px-2"
+                      className="flex-shrink-0 transition-all duration-300 px-2"
                       style={{
                         width: `${itemWidth}px`,
                         opacity,
                         filter: `blur(${blur}px)`,
-                        transform: `scale(${scale})`
+                        transform: `scale(${scale})`,
+                        pointerEvents: 'auto'
                       }}
+                      onClick={() => handleSkillClick(index)}
                     >
                       <div 
-                        className={`w-full aspect-square rounded-2xl flex flex-col items-center justify-center transition-all duration-300 ${
+                        className={`w-full aspect-square rounded-2xl flex flex-col items-center justify-center transition-all duration-300 cursor-pointer ${
                           isSelected 
                             ? 'bg-gradient-to-br from-gray-800 to-gray-900 shadow-2xl' 
-                            : 'bg-gray-800'
+                            : 'hover:bg-gray-950'
                         }`}
                         style={{
                           borderColor: skill.color,
@@ -222,7 +303,7 @@ const SkillsOmnitrix = () => {
           </div>
           
           {/* Selected skill details */}
-          <div className="w-full max-w-md bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-green-500/30">
+          <div className="w-full max-w-md backdrop-blur-sm rounded-xl p-6 border-2 border-blue-200/40 hover:border-blue-400/40">
             <div className="flex items-center gap-4 mb-4">
               <div 
                 className="w-16 h-16 rounded-full flex items-center justify-center"
@@ -232,7 +313,6 @@ const SkillsOmnitrix = () => {
               </div>
               <div className="flex-1">
                 <h3 className="text-white font-bold text-2xl">{selectedSkill.name}</h3>
-                <p className="text-gray-400 text-sm">{selectedSkill.experience}</p>
               </div>
             </div>
             
