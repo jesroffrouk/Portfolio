@@ -16,7 +16,7 @@ export function TimelineDemo() {
           </p>
           <div className="grid grid-cols-3 gap-4">
             <img
-              src="https://getmybooks.sgp1.cdn.digitaloceanspaces.com/images/33719430_1.jpg"
+              src="shot.jpg"
               alt="hero template"
               width={500}
               height={500}

@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -46,16 +44,19 @@
   --color-color-2: var(--color-2);
   --color-color-1: var(--color-1);
   @keyframes rainbow {
-  0% {
-    background-position: 0%;
+    0% {
+      background-position: 0%;
     }
-  100% {
-    background-position: 200%;
+    100% {
+      background-position: 200%;
     }
   }
 }
 
 :root {
+  /* Added missing --background and --foreground variables for light mode */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
   --radius: 0.625rem;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -136,6 +137,7 @@
   --color-home-bg: #000000;
   --color-home-text: #fff;
   --font-home: "Share Tech Mono", monospace;
+  --color-outline1: #E6FFFD;
 }
 
 @layer base {
@@ -145,4 +147,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+ 
+.headings {
+  @apply text-lg sm:text-3xl text-center font-bold
 }

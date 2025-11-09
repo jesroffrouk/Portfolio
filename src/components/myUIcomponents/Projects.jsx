@@ -2,9 +2,9 @@ import PortfolioCards from "./PortfolioCards"
 
 function Projects() {
   return (
-    <div className='mt-14 mx-4 sm:mx-16'>
-      <div className="mx-auto py-16 px-4 md:px-8 lg:px-10 text-center">
-        <h2 className="text-lg md:text-3xl mb-2 text-white font-bold">
+    <div className='mt-14'>
+      <div className="mx-auto py-5 px-4 md:px-8 lg:px-10 text-center">
+        <h2 className="headings mb-2">
             Projects
           </h2>
         <p

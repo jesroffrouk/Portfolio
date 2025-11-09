@@ -2,7 +2,6 @@ import './index.css'
 import './App.css'
 import Headers from './components/myUIcomponents/Headers'
 import Hero from './components/myUIcomponents/Hero'
-import TextType from './components/TextType'
 import About from './components/myUIcomponents/About'
 import Projects from './components/myUIcomponents/Projects'
 import Skills from './components/myUIcomponents/Skills'
@@ -16,11 +15,11 @@ function App() {
     <>
       <div className='bg-home-bg text-home-text font-home overflow-x-hidden relative'>
 
-        <div className='mx-0 sm:mx-16'>
-          <Headers />
+        <div className='mx-4 sm:mx-10 md:mx-32 lg:mx-52 sm:mt-6 mt-4 pb-20'>
+          {/* <Headers /> */}
 
         {/* hero component */}
-        <div className='text-center text-2xl sm:text-4xl font-bold mt-8 mx-4'>
+        {/* <div className='text-center text-2xl sm:text-4xl font-bold mt-8 mx-4'>
           <TextType 
             text={["Welcome to My Website", "It's great to have you here", "Explore and connect with me"]}
             typingSpeed={75}
@@ -28,7 +27,7 @@ function App() {
             showCursor={true}
             cursorCharacter="_"
           />
-        </div>
+        </div> */}
         <Hero />
 
         {/* About section */}
