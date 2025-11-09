@@ -3,7 +3,7 @@ import { Link } from "react-router"
 
 function Hero() {
   return (
-<div className="flex flex-col justify-between gap-4 min-h-screen lg:flex-row border-b border-gray-800">
+<div className="flex flex-col justify-between gap-4 h-full sm:min-h-screen lg:flex-row border-b border-gray-800">
     <div className="p-4 sm:p-10 overflow-hidden flex-none aspect-auto">
         <ProfileCard
             name="Jogendra Padhan"
@@ -20,7 +20,7 @@ function Hero() {
             onContactClick={() => window.open('https://x.com/JesroffR')}
         />
     </div>
-    <div className="h-auto lg:h-[500px] flex flex-col m-2 sm:m-5 mt-4 sm:mt-8 pt-2 sm:pt-4 lg:pt-14 items-start justify-center gap-2 sm:gap-3">
+    <div className="h-auto lg:h-[500px] flex flex-col m-2 sm:m-5 mt-4 sm:mt-8 pt-2 sm:pt-4 lg:pt-14 items-center lg:items-start justify-center text-center lg:text-start gap-2 sm:gap-3">
         {/* 3 component */}
         <p className="text-3xl sm:text-4xl lg:text-6xl font-extrabold">Hi I'm</p>
         <p className="text-3xl sm:text-4xl lg:text-6xl font-semibold">Jogendra Padhan</p>

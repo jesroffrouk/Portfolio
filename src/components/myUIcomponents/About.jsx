@@ -2,9 +2,17 @@
 function About() {
   return (
     <div className="mt-14">
-        <div className="headings py-5 gap-2">About</div>
+        <div className="mx-auto py-5 px-4 md:px-8 lg:px-10 text-center">
+        <h2 className="headings mb-2">
+            About
+          </h2>
+        <p
+          className="text-neutral-500 text-sm md:text-base">
+            More about myself
+        </p>
+      </div> 
         <div className="max-w-6xl rounded-lg">
-            <p className="text-gray-300 leading-relaxed text-xs sm:text-lg">
+            <p className="text-gray-300 leading-relaxed text-xs sm:text-lg text-center px-0 sm:px-8">
                 At the start of 2025, after finishing my bachelor degree, I took programming seriously. 
                 Learning different tools was what excited me at first, but I balanced it with building projects. 
                 I have not got any corporate experience yet, but looking forward to it.

@@ -207,11 +207,11 @@ const SkillsOmnitrix = () => {
   }, [isDragging, startX, offset, isTouchDevice]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-8">
+    <div className="h-full sm:min-h-screen flex items-center justify-center px-8 mt-14 sm:mt-0">
       <div className="max-w-4xl w-full">
         <div className='py-5'>
           <h1 className="headings mb-4">
-            Skills Sets 
+            Skills 
           </h1>
           <p className="text-gray-400 text-center flex flex-row justify-center items-center">
             {isTouchDevice ? 'Swipe or tap to explore • ' : 'Move your cursor to scroll • '}
@@ -293,7 +293,7 @@ const SkillsOmnitrix = () => {
                             style={{ color: skill.color }}
                           />
                         </div>
-                        <h3 className="text-white font-bold text-sm text-center px-2">{skill.name}</h3>
+                        <h3 className="text-white font-bold text-xs sm:text-sm text-center px-2">{skill.name}</h3>
                       </div>
                     </div>
                   );
@@ -312,11 +312,11 @@ const SkillsOmnitrix = () => {
                 <SelectedIcon size={28} style={{ color: selectedSkill.color }} />
               </div>
               <div className="flex-1">
-                <h3 className="text-white font-bold text-2xl">{selectedSkill.name}</h3>
+                <h3 className="text-white font-bold text-sm sm:text-2xl">{selectedSkill.name}</h3>
               </div>
             </div>
             
-            <p className="text-gray-300 text-sm mb-4">{selectedSkill.description}</p>
+            <p className="text-gray-300 text-xs sm:text-sm mb-4">{selectedSkill.description}</p>
             
             {/* Proficiency bar */}
             <div className="w-full">

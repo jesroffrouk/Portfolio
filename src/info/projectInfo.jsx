@@ -4,7 +4,7 @@ import { Code, Zap, Database, GitBranch } from 'lucide-react';
 export const projectInfo = 
 {
 moviezone: {
-    title: 'Movie-review-platform',
+    title: 'Moviezone',
     description: 'A Platform for cinephiles',
     icon: <Code className="w-10 h-10 text-blue-400" />,
     stats: {
