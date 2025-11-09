@@ -26,7 +26,7 @@ const ProjectCard = ({
       </div>
 
       {/* Title */}
-      <h2 className="text-lg font-bold mb-1">{title}</h2>
+      <h2 className="text-sm sm:text-lg font-bold mb-1">{title}</h2>
       
       {/* Period */}
       <p className={`text-xs mb-2 text-gray-400`}>
@@ -34,7 +34,7 @@ const ProjectCard = ({
       </p>
       
       {/* Description */}
-      <p className={`mb-3 leading-relaxed text-sm min-h-16 text-gray-200`}>
+      <p className={`mb-3 leading-relaxed text-xs sm:text-sm min-h-16 text-gray-200`}>
         {description}
       </p>
       
