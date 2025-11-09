@@ -1,9 +1,10 @@
-import { StrictMode } from 'react'
+import React, { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
 import { createBrowserRouter,createRoutesFromElements,Route,RouterProvider } from 'react-router'
-import Projects from './pages/Projects.jsx'
-import ProjectsList from './pages/ProjectList.jsx'
+
+const App = React.lazy(()=> import('./App.jsx'))
+const Projects = React.lazy(()=> import('./pages/Projects.jsx'))
+const ProjectsList = React.lazy(()=> import('./pages/ProjectList.jsx'))
 
 const router = createBrowserRouter(
   createRoutesFromElements(
