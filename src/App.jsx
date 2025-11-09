@@ -1,6 +1,4 @@
-import './index.css'
-import './App.css'
-import Headers from './components/myUIcomponents/Headers'
+// import Headers from './components/myUIcomponents/Headers'
 import Hero from './components/myUIcomponents/Hero'
 import About from './components/myUIcomponents/About'
 import Projects from './components/myUIcomponents/Projects'
