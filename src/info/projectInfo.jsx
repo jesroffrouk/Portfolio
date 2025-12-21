@@ -169,4 +169,66 @@ moviezone: {
         },
         footer: 'Made with 💙 by Jesroff • Licensed under Non-commerical(Custom)'
     },
+  passwordmanager: {
+        title: 'Password Manager',
+        description: 'A platform to store your passwords locally',
+        icon: <Code className="w-10 h-10 text-blue-400" />,
+        stats: {
+        stars: '1.2k',
+        forks: '234',
+        watchers: '89'
+        },
+        techStack: [
+        { name: 'React', color: 'bg-blue-500' },
+        { name: 'TailwindCSS', color: 'bg-cyan-400' },
+        { name: 'indexedDB', color: 'bg-green-400' },
+        ],
+        features: [
+        {
+            icon: <Zap className="w-5 h-5" />,
+            title: 'Your Data Never Leaves Your Device',
+            description: 'All encryption, decryption, and data handling stay completely on your machine.'
+        },
+        {
+            icon: <Database className="w-5 h-5" />,
+            title: 'No User authentication',
+            description: 'You don’t have to make an account for the password manager itself. Just your master key is enough.'
+        },
+        {
+            icon: <Code className="w-5 h-5" />,
+            title: 'Simplicity and Speed',
+            description: 'Because everything happens locally, performance is fast and independent of internet connectivity.'
+        },
+        {
+            icon: <GitBranch className="w-5 h-5" />,
+            title: 'Full Ownership of Your Data',
+            description: 'The app works like a tool, nothing more. You decide where the file stays, how you back it up, and how you use it.'
+        }
+        ],
+        screenshots: [
+        {
+            title: 'Dashboard View',
+            url: '/project3/img1.png',
+            placeholder: 'Add your screenshot here'
+        },
+        {
+            title: 'Collaboration Interface',
+            url: '/project3/img2.png',
+            placeholder: 'Add your screenshot here'
+        }
+        ],
+        systemArchitecture: {
+        url: '/project2/systemdesign.png', 
+        placeholder: 'Replace this with your architecture diagram'
+        },
+        conclusion: {
+        summary: 'Building a password manager that runs entirely on the client helped me understand how encryption and decryption work, and how much security workflow needs to be managed. It’s a project that answered my simple question about why passwords usually need to be stored on a server—and it did so effectively.',
+        learnings: 'One thing I am not able to manage in my password manager is that it has browser vulnerabilities. It made me learn that security is tough in the browser compared to software running on the OS. The password manager helped me try out my idea and motivated me to think beyond regular barriers.'
+        },
+        links: {
+        demo: 'https://cvault-jesroff.vercel.app/',
+        github: 'https://github.com/jesroffrouk/Password-Manager'
+        },
+        footer: 'Made with 💙 by Jesroff • Licensed under Non-commerical(Custom)'
+    },
 }

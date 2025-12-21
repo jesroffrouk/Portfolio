@@ -49,11 +49,11 @@ const Allskills = () => {
       {/* Overlay */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 bg-opacity-100 backdrop-blur-lg flex items-center justify-center z-50 p-4"
           onClick={() => setIsOpen(false)}
         >
           <div 
-            className="bg-gradient-to-br from-gray-900 to-gray-950 rounded-3xl p-8 max-w-5xl w-full max-h-[80vh] overflow-y-auto custom-scrollbar border-2 border-gray-700 shadow-2xl"
+            className="bg-gradient-to-br rounded-3xl p-8 max-w-5xl w-full max-h-[80vh] overflow-y-auto no-scrollbar border-2 border-gray-700 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
