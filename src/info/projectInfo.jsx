@@ -218,7 +218,7 @@ moviezone: {
         }
         ],
         systemArchitecture: {
-        url: '/project2/systemdesign.png', 
+        url: '/project3/system.png', 
         placeholder: 'Replace this with your architecture diagram'
         },
         conclusion: {
