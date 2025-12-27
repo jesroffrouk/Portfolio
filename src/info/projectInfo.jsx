@@ -229,6 +229,6 @@ moviezone: {
         demo: 'https://cvault-jesroff.vercel.app/',
         github: 'https://github.com/jesroffrouk/Password-Manager'
         },
-        footer: 'Made with 💙 by Jesroff • Licensed under Non-commerical(Custom)'
+        footer: 'Made with 💙 by Jesroff • Licensed under MIT'
     },
 }
