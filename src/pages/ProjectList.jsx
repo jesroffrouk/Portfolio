@@ -58,8 +58,8 @@ export default function ProjectsList() {
     {
       title: 'Password Manager',
       description: 'A website to manage passwords enitrely on client side',
-      link: '/projects/',
-      comingSoon: true
+      link: '/projects/passwordmanager',
+      comingSoon: false
     },
   ];
 

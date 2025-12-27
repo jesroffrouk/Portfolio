@@ -76,6 +76,9 @@ export default function ProjectShowcase({ project }) {
         </div>
 
         {/* Problems & Solutions */}
+        {
+          project.challenges && 
+          <>
         <div className="mb-12">
           <h2 className="headings mb-6 flex items-center gap-2">
             <span></span> Challenges & Solutions
@@ -106,6 +109,9 @@ export default function ProjectShowcase({ project }) {
             ))}
           </div>
         </div>
+          </>
+        }
+
 
         {/* Demo Screenshots */}
         {project.screenshots && project.screenshots.length > 0 && (

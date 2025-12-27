@@ -1,5 +1,5 @@
 import React from "react";
-import { CalendarIcon, HomeIcon, MailIcon,  FolderKanban } from "lucide-react";
+import { CalendarIcon, HomeIcon, MailIcon,  FolderKanban , NotebookPen } from "lucide-react";
 
 // adjust these imports to relative paths if you're not using shadcn/ui
 import { buttonVariants } from "../ui/button";
@@ -64,6 +64,7 @@ const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/projects", icon: FolderKanban, label: "Projects" },
+    { href: "https://blog-jesroff.vercel.app/", icon: NotebookPen, label: "Blogs" },
   ],
   contact: {
     social: {
