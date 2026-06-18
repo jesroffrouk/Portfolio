@@ -3,7 +3,7 @@ import ProjectShowcase from '@/components/myUIcomponents/Projects/ProjectsShowca
 import { useParams } from 'react-router';
 import { DockDemo } from '@/components/myUIcomponents/Dock';
 import { projectInfo } from '@/info/projectInfo';
-import ScrollToTop from '@/components/myUIcomponents/ScrollToTop';
+import ScrollToTop from '@/components/myUIcomponents/Sections/ScrollToTop';
 
 
 // Example usage with sample data

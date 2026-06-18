@@ -1,8 +1,8 @@
-import PortfolioCards from "./PortfolioCards"
+import ProjectSection from "../Projects/ProjectSection"
 
 function Projects() {
   return (
-    <div className='mt-14'>
+    <div className='mt-4 sm:mt-14'>
       <div className="mx-auto py-5 px-4 md:px-8 lg:px-10 text-center">
         <h2 className="headings mb-2">
             Projects
@@ -13,7 +13,7 @@ function Projects() {
         </p>
       </div>
      <div className="mt-4">
-        <PortfolioCards />
+        <ProjectSection />
      </div>
     </div>
   )
