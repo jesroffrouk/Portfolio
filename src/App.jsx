@@ -11,9 +11,10 @@ import Skills from './components/myUIcomponents/Skills/Skills'
 import Experience from './components/myUIcomponents/Experience/Experience'
 
 function App() {
+    const backgroundUrl = 'https://res.cloudinary.com/dfvuwqwf9/image/upload/v1781765209/wallpapersden.com_monkey-luffy-full-transform-digital_3840x2160_xuoysu.jpg'
   return (
     <WorkspaceProvider>
-      <div className="flex flex-col w-screen h-screen overflow-hidden relative bg-[url('wallpaper.jpg')] bg-cover text-home-text font-home">
+      <div style={{backgroundImage: `url(${backgroundUrl})`}} className={`flex flex-col w-screen h-screen overflow-hidden relative bg-cover text-home-text font-home`}>
 
         <div className="shrink-0 px-3 pt-3">
           <Panel />

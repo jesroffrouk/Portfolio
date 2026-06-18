@@ -7,6 +7,7 @@ function Hero() {
   const cooldown     = useRef(false)
   const lastScroll   = useRef(0)
   const [activeSection, setActiveSection] = useState(0)
+  const avatarUrl = "https://res.cloudinary.com/dfvuwqwf9/image/upload/v1781765295/heroImage_grhonh.png"
 
   // Wheel snap — mobile only
   useEffect(() => {
@@ -84,7 +85,7 @@ function Hero() {
           handle="jesroff"
           status="Online"
           contactText="Contact Me"
-          avatarUrl="/heroImage.png"
+          avatarUrl={avatarUrl}
           showUserInfo={true}
           enableTilt={true}
           iconUrl="/code.png"
