@@ -91,9 +91,9 @@ moviezone: {
         description: 'platform where pictures are bound to locations',
         icon: <Code className="w-10 h-10 text-blue-400" />,
         stats: {
-        stars: '1.2k',
-        forks: '234',
-        watchers: '89'
+        stars: '0',
+        forks: '0',
+        watchers: '0'
         },
         techStack: [
         { name: 'React', color: 'bg-blue-500' },
@@ -164,7 +164,7 @@ moviezone: {
         learnings: 'Pinpic helped me understand how process of storing images and binding it to location works behind the scene. I learnt about choosing right architecture and improving codebase. I learnt about problem solving with the mindset of a product builder.'
         },
         links: {
-        demo: '#',
+        demo: 'https://pinpic-jesroff.vercel.app/',
         github: 'https://github.com/jesroffrouk/PinPic'
         },
         footer: 'Made with 💙 by Jesroff • Licensed under Non-commerical(Custom)'
