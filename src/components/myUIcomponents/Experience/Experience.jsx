@@ -107,9 +107,9 @@ export default function Experience() {
             <h3 className="text-[15px] sm:text-[17px] font-semibold text-white mb-0.5">
               {exp.role}
             </h3>
-            <p className="text-xs text-white/40 tracking-wide">{exp.company}</p>
+            <p className="text-xs text-white/60 tracking-wide">{exp.company}</p>
           </div>
-          <span className="text-[10px] text-white/40 border border-white/10 rounded-md px-2.5 py-0.5 font-mono whitespace-nowrap shrink-0">
+          <span className="text-[10px] text-white/60 border border-white/10 rounded-md px-2.5 py-0.5 font-mono whitespace-nowrap shrink-0">
             {exp.period}
           </span>
         </div>
@@ -118,15 +118,15 @@ export default function Experience() {
         <div className="h-px bg-white/[0.07] mb-3.5" />
 
         {/* Description */}
-        <p className="text-[12px] text-white/50 leading-[1.75] mb-3.5">
+        <p className="text-[12px] text-white/90 leading-[1.75] mb-3.5">
           {exp.desc}
         </p>
 
         {/* Bullets — hidden mobile, visible sm+ */}
         <ul className="hidden sm:flex flex-col gap-2 mb-4 list-none p-0">
           {exp.bullets.map((b, i) => (
-            <li key={i} className="flex items-start gap-2 text-[12px] text-white/65 leading-[1.6]">
-              <span className="text-white/25 shrink-0 text-[11px] mt-0.75 font-mono">→</span>
+            <li key={i} className="flex items-start gap-2 text-[12px] text-white/80 leading-[1.6]">
+              <span className="text-white/80 shrink-0 text-[11px] mt-0.75 font-mono">→</span>
               <span>{b}</span>
             </li>
           ))}

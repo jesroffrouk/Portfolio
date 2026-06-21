@@ -48,7 +48,7 @@ function About() {
 
       {/* Body */}
       <div className="max-w-3xl mx-auto px-6">
-        <p className="text-gray-300 leading-relaxed text-xs sm:text-base text-center whitespace-pre-line">
+        <p className="text-gray-200 leading-relaxed text-xs sm:text-base text-center whitespace-pre-line">
           <span>{FIRST_LINE}</span>
           <span>{typed}</span>
           {/* Blinking cursor — always visible, always blinking */}

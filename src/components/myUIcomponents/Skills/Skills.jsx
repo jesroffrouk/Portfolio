@@ -18,13 +18,6 @@ const icons = [
 export default function Skills() {
   return (
     <div className="skills-root">
- 
-      {/* Heading */}
-      <div className="skills-heading">
-        <h2 className="headings">Skills</h2>
-        <p className="skills-sub">Technologies I work with</p>
-      </div>
- 
       {/* Grid */}
       <div className="skills-grid">
         {icons.map(({ id, name, Icon, color }) => (

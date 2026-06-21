@@ -7,7 +7,7 @@ import SnapScroll from './components/myUIcomponents/SnapScroll/SnapScroll'
 import Hero from './components/myUIcomponents/Sections/Hero'
 import Projects from './components/myUIcomponents/Sections/Projects'
 import About from './components/myUIcomponents/Sections/About'
-import Skills from './components/myUIcomponents/Skills/Skills'
+import SkillSection from './components/myUIcomponents/Sections/Skills'
 import Experience from './components/myUIcomponents/Experience/Experience'
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
               2: (<SnapScroll>
                     <About />
                     <Projects />
-                    <Skills />
+                    <SkillSection />
                     <Experience />
                   </SnapScroll>)
                             ,

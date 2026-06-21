@@ -46,7 +46,7 @@ const ProjectCard = ({ project, isActive }) => (
     </div>
     <h2 className="text-sm sm:text-base font-bold mb-1 text-white">{project.title}</h2>
     <p className="text-xs text-gray-400 mb-2">{project.period}</p>
-    <p className="text-xs sm:text-sm text-gray-300 leading-relaxed mb-3 min-h-[48px]">
+    <p className="text-xs sm:text-sm text-gray-200 leading-relaxed mb-3 min-h-12">
       {project.description}
     </p>
     <div className="flex flex-wrap gap-1">
