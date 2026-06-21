@@ -11,7 +11,7 @@ import SkillSection from './components/myUIcomponents/Sections/Skills'
 import Experience from './components/myUIcomponents/Experience/Experience'
 
 function App() {
-    const backgroundUrl = 'https://res.cloudinary.com/dfvuwqwf9/image/upload/v1781765209/wallpapersden.com_monkey-luffy-full-transform-digital_3840x2160_xuoysu.jpg'
+    const backgroundUrl = 'https://res.cloudinary.com/dfvuwqwf9/image/upload/v1782028480/wallpaper3_limyr7.jpg'
   return (
     <WorkspaceProvider>
       <div style={{backgroundImage: `url(${backgroundUrl})`}} className={`flex flex-col w-screen h-screen overflow-hidden relative bg-cover text-home-text font-home`}>
