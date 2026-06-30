@@ -231,4 +231,75 @@ moviezone: {
         },
         footer: 'Made with 💙 by Jesroff • Licensed under MIT'
     },
+  creatorshelf: {
+        title: 'creatorShelf',
+        description: 'A platform for creators to centralized their portfolio',
+        icon: <Code className="w-10 h-10 text-blue-400" />,
+        stats: {
+        stars: '1.2k',
+        forks: '234',
+        watchers: '89'
+        },
+        techStack: [
+        { name: 'Next.js', color: 'bg-blue-800' },
+        { name: 'TailwindCSS', color: 'bg-cyan-400' },
+        { name: 'Supabase', color: 'bg-green-400' },
+        ],
+        features: [
+        {
+            icon: <Zap className="w-5 h-5" />,
+            title: 'Centralized portfolio',
+            description: 'consolidates your entire creative and professional body of work into single gallery, direct way to attracts collab'
+        },
+        {
+            icon: <Code className="w-5 h-5" />,
+            title: 'automated youtube integration',
+            description: 'Dynamically keeps your portfolio updated by automatically fetching and rendering your latest youtube content and metadata'
+        },
+        {
+            icon: <Database className="w-5 h-5" />,
+            title: 'one-click supabase authentication',
+            description: 'Delivers frictionless onboarding by supabase, allowing users to login with one click'
+        },
+        ],
+        challenges: [
+        {
+            problem: 'Tradination row based history consumed more storage space',
+            solution: 'used Postgresql jsonb format to store history efficiently , reducing overall storage consumption by 80%'
+        },
+        {
+            problem: 'External serverless platform cron jobs are unreliable and restrictive',
+            solution: 'Levered native supabase edge functions and pg_cron to handle scheduled background tasks directly within database infrastructure'
+        },
+        {
+            problem: 'Frequenly data fetching risked exhausting youtube api rate limits under high user loads',
+            solution: 'implemented 3-day auto fetch caching window to user staticstics , minimizing API overhead while ensuring scalability'
+        }
+        ],
+        // screenshots: [
+        // {
+        //     title: 'Dashboard View',
+        //     url: '/project3/img1.png',
+        //     placeholder: 'Add your screenshot here'
+        // },
+        // {
+        //     title: 'Collaboration Interface',
+        //     url: '/project3/img2.png',
+        //     placeholder: 'Add your screenshot here'
+        // }
+        // ],
+        // systemArchitecture: {
+        // url: '/project3/system.png', 
+        // placeholder: 'Replace this with your architecture diagram'
+        // },
+        conclusion: {
+        summary: 'Creatorshelf is a personal project designed to centralize fragmented digital footprints for content creators, providing a unified hub to showcase metrics for advertisers and collaborators. While currently focused on core statistics, its architecture is built to evolve into a multi-platform ecosystem as user adoption helps secure external API verifications',
+        learnings: 'Developing creatorshelf demonstrated how to successfully align technical architecture with a focused MVP scope while keeping the foundation flexible for future scaling. The execution highlighted the necessity of balancing local database optimizations with external API constraints, showing that navigating platform verification hurdles is a critical step in building a sustainable, multi-platform tool.'
+        },
+        links: {
+        demo: 'https://creatorself.vercel.app/',
+        github: '#'
+        },
+        footer: 'Made with 💙 by Jesroff and Udit thakur'
+    },
 }
