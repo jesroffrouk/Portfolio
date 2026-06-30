@@ -8,12 +8,12 @@ const STEP       = CARD_WIDTH + CARD_GAP;
 
 const projects = [
   {
-    title: "Movie Review Platform",
-    period: "Oct 2024 - Feb 2025",
-    description: "A movie review platform for movie lovers to share their opinion on movies with others.",
-    technologies: ["Next.js", "Typescript", "TailwindCSS", "MongoDB", "Redux", "RTKQuery", "DaisyUI"],
-    links: { fullpage: "moviezone" },
-    image: "project1.png",
+    title: "CreatorShelf",
+    period: "May 2026 - June 2026",
+    description: "A platform to creators to centralized their portfolio",
+    technologies: ["Next.js", "Supabase", "PostgreSQL", "TailwindCSS"],
+    links: { fullpage: "creatorshelf" },
+    image: "/project4/img1.png",
   },
   {
     title: "Pinpic",
@@ -30,6 +30,14 @@ const projects = [
     technologies: ["React.js", "Express", "PostgreSQL", "Prisma", "TailwindCSS", "Shadcn UI"],
     links: { fullpage: "passwordmanager" },
     image: "/project3/img1.png",
+  },
+  {
+    title: "Movie Review Platform",
+    period: "Oct 2024 - Feb 2025",
+    description: "A movie review platform for movie lovers to share their opinion on movies with others.",
+    technologies: ["Next.js", "Typescript", "TailwindCSS", "MongoDB", "Redux", "RTKQuery", "DaisyUI"],
+    links: { fullpage: "moviezone" },
+    image: "project1.png",
   },
 ];
 

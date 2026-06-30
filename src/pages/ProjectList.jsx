@@ -61,6 +61,12 @@ export default function ProjectsList() {
       link: '/projects/passwordmanager',
       comingSoon: false
     },
+    {
+      title: 'creatorShelf',
+      description: 'A website for creators to centralized their portfolio',
+      link: '/projects/creatorshelf',
+      comingSoon: false
+    },
   ];
 
   return (

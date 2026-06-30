@@ -19,6 +19,7 @@ export default function Projects() {
         {slug == 'moviezone' && <ProjectShowcase project={projectInfo["moviezone"]} /> }
         {slug == 'pinpic' && <ProjectShowcase project={projectInfo["pinpic"]} /> }
         {slug == 'passwordmanager' && <ProjectShowcase project={projectInfo["passwordmanager"]} /> }
+        {slug == 'creatorshelf' && <ProjectShowcase project={projectInfo["creatorshelf"]} /> }
         <DockDemo />
       </div>
       </div>
