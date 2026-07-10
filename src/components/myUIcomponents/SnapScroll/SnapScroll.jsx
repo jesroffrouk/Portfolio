@@ -18,7 +18,7 @@ import "./SnapScroll.css";
  *     <Education />
  *   </SnapScroll>
  */
-export default function SnapScroll({ children, showDots = true }) {
+export default function SnapScroll({ children, showDots = false }) {
   const sections = Array.isArray(children) ? children : [children];
   const containerRef = useRef(null);
   const sectionRefs  = useRef([]);

@@ -2,18 +2,18 @@ import { useState } from 'react';
 
 const experiences = [
   {
-    tab: 'Freelancing',
-    role: 'Fullstack developer',
+    tab: 'CreatorShelf',
+    role: 'Backend developer',
     company: 'Self-employed',
-    period: 'June 2025 — Present',
-    desc: 'Building and shipping web applications independently. Working directly with clients to scope, design, and deliver full-stack products from scratch.',
+    period: 'June 2026 — Present',
+    desc: 'Building and fixing issues regularly on a platform for creators',
     bullets: [
-      'Designed and developed a movie review platform with user auth, reviews, and media management',
-      'Built Pinpic — a location-bound image sharing app using maps and real-time data',
-      'Developed a local-first password manager with client-side AES encryption',
+      'handling backend query optimization and management',
+      'managing platform to make it compartible for daily users',
+      'designing scalable system',
       'Managed deployments, CI pipelines, and database migrations end to end',
     ],
-    tech: ['React', 'Next.js', 'TypeScript', 'PostgreSQL', 'MongoDB'],
+    tech: ['React', 'Next.js', 'TypeScript', 'Supabase', 'PostgreSQL'],
   },
   {
     tab: 'Open Source',
