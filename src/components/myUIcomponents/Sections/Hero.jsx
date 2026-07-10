@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react"
+import { useRef, useEffect } from "react"
 import { Link } from "react-router"
 import ProfileCard from "../ProfileCard/ProfileCard"
 
@@ -6,7 +6,6 @@ function Hero() {
   const containerRef = useRef(null)
   const cooldown     = useRef(false)
   const lastScroll   = useRef(0)
-  const [activeSection, setActiveSection] = useState(0)
   const avatarUrl = "https://res.cloudinary.com/dfvuwqwf9/image/upload/v1781765295/heroImage_grhonh.png"
 
   // Wheel snap — mobile only
@@ -122,18 +121,6 @@ function Hero() {
           </p>
 
           {/* Dots — mobile only, driven by IntersectionObserver */}
-          <div className="flex gap-2 mt-4 lg:hidden">
-            {[0, 1].map((i) => (
-              <span
-                key={i}
-                className={`block rounded-full transition-all duration-300 ${
-                  activeSection === i
-                    ? "w-4 h-1.5 bg-white"
-                    : "w-1.5 h-1.5 bg-white/25"
-                }`}
-              />
-            ))}
-          </div>
         </div>
       </div>
     </div>
