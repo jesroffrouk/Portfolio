@@ -87,7 +87,7 @@ function Hero() {
           avatarUrl={avatarUrl}
           showUserInfo={true}
           enableTilt={true}
-          iconUrl="/code.png"
+          iconUrl="#"
           showBehindGradient={true}
           enableMobileTilt={false}
           onContactClick={() => window.open("https://x.com/JesroffR")}
